@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Елена Трофимова — Executive & Business Coach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #2a8c8c;
+    --orange: #e87d2a;
+    --dark: #1a1a1a;
+    --mid: #3d3d3d;
+    --light: #f4f1ec;
+    --white: #ffffff;
+    --border: rgba(42,140,140,0.2);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(244,241,236,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--dark);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 64px;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8vw 6vw 6vw 8vw;
+    position: relative;
+  }
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 15%; bottom: 15%;
+    width: 3px;
+    background: linear-gradient(to bottom, transparent, var(--teal), var(--orange), transparent);
+  }
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 32px; height: 1px;
+    background: var(--teal);
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 0.3rem;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--teal);
+  }
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--mid);
+    margin-bottom: 2rem;
+    line-height: 1.4;
+  }
+  .hero-tags {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .tag {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    color: var(--mid);
+    background: white;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center; gap: 0.6rem;
+    background: var(--teal);
+    color: white;
+    padding: 0.9rem 2rem;
+    border-radius: 4px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    align-self: flex-start;
+  }
+  .btn-primary:hover { background: #236f6f; transform: translateY(-1px); }
+  .btn-primary svg { width: 16px; height: 16px; }
+
+  .hero-right {
+    background: var(--dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 6vw;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+      linear-gradient(135deg, rgba(42,140,140,0.15) 0%, transparent 60%),
+      linear-gradient(225deg, rgba(232,125,42,0.1) 0%, transparent 50%);
+  }
+  .hero-quote {
+    position: relative;
+    z-index: 1;
+  }
+  .hero-quote blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 2.2vw, 2rem);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+  .hero-quote blockquote::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--teal);
+    line-height: 0;
+    vertical-align: -1.5rem;
+    margin-right: 0.2rem;
+    font-style: normal;
+  }
+  .quote-author {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+  .hero-stats {
+    position: relative; z-index: 1;
+    display: flex; gap: 2.5rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: var(--teal);
+    display: block;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    display: block;
+    margin-top: 0.3rem;
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 8vw; }
+  .section-header {
+    margin-bottom: 3.5rem;
+  }
+  .section-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--orange);
+    display: flex; align-items: center; gap: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  .section-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 24px; height: 1px;
+    background: var(--orange);
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--dark);
+  }
+  h2 em { font-style: italic; color: var(--teal); }
+
+  /* ABOUT */
+  .about { background: var(--white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .about-text p {
+    color: var(--mid);
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+  }
+  .about-text strong { color: var(--dark); font-weight: 600; }
+
+  .credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .cred-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--light);
+  }
+  .cred-icon {
+    width: 36px; height: 36px;
+    background: var(--teal);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .cred-text strong {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 0.2rem;
+  }
+  .cred-text span {
+    font-size: 0.78rem;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+
+  /* WHO */
+  .who { background: var(--dark); }
+  .who .section-eyebrow { color: var(--teal); }
+  .who .section-eyebrow::before { background: var(--teal); }
+  .who h2 { color: var(--white); }
+  .who h2 em { color: var(--orange); }
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+  .who-card {
+    background: #242424;
+    padding: 2rem;
+    transition: background 0.2s;
+  }
+  .who-card:hover { background: #2c2c2c; }
+  .who-card-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: rgba(42,140,140,0.3);
+    font-weight: 300;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .who-card h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.02em;
+  }
+  .who-card p {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  /* FORMATS */
+  .formats { background: var(--light); }
+  .formats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  .format-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .format-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+  .format-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--teal), var(--orange));
+  }
+  .format-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: rgba(42,140,140,0.12);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .format-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+  .format-card p {
+    font-size: 0.82rem;
+    color: var(--mid);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  .format-meta {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--teal);
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .format-results {
+    margin-top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .format-result-item {
+    font-size: 0.78rem;
+    color: var(--mid);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .format-result-item::before {
+    content: '→';
+    color: var(--teal);
+    flex-shrink: 0;
+    font-weight: 600;
+  }
+
+  /* APPROACH */
+  .approach { background: white; }
+  .approach-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .approach-col h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: var(--dark);
+  }
+  .approach-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .approach-list li {
+    font-size: 0.88rem;
+    color: var(--mid);
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.6;
+  }
+  .approach-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 700;
+  }
+  .approach-list.no li::before {
+    content: '✗';
+    color: #c0392b;
+  }
+
+  /* CASE */
+  .case-section { background: var(--light); }
+  .case-card {
+    background: white;
+    border-radius: 8px;
+    padding: 3rem;
+    border: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .case-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.8rem;
+  }
+  .case-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .case-card p {
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+  .case-results h4 {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 1rem;
+  }
+  .case-result {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.85rem;
+    color: var(--mid);
+  }
+  .case-result-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+  .case-quote {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    margin-top: 1rem;
+  }
+  .case-quote blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+  .case-quote cite {
+    display: block;
+    margin-top: 0.8rem;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  /* PROCESS */
+  .process { background: var(--dark); }
+  .process .section-eyebrow { color: var(--teal); }
+  .process .section-eyebrow::before { background: var(--teal); }
+  .process h2 { color: var(--white); }
+  .process-steps {
+    display: flex;
+    gap: 0;
+    margin-top: 3rem;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 5%;
+    right: 5%;
+    height: 1px;
+    background: linear-gradient(to right, var(--teal), var(--orange));
+    z-index: 0;
+  }
+  .process-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 1;
+  }
+  .step-dot {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: var(--dark);
+    border: 2px solid var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--teal);
+    margin-bottom: 1.2rem;
+  }
+  .step-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+    margin-bottom: 0.4rem;
+  }
+  .step-sub {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.5;
+  }
+
+  /* CONTACT */
+  .contact {
+    background: var(--teal);
+    text-align: center;
+    padding: 6rem 8vw;
+  }
+  .contact .eyebrow { justify-content: center; color: rgba(255,255,255,0.6); }
+  .contact .eyebrow::before { background: rgba(255,255,255,0.4); }
+  .contact h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    color: white;
+    margin: 1rem 0 0.8rem;
+  }
+  .contact h2 em { font-style: italic; color: rgba(255,255,255,0.75); }
+  .contact-sub {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+    margin-left: auto; margin-right: auto;
+  }
+  .btn-white {
+    display: inline-flex;
+    align-items: center; gap: 0.6rem;
+    background: white;
+    color: var(--teal);
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+  .contact-email {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .contact-email:hover { color: white; }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    padding: 2rem 8vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.05em;
+  }
+  .footer-note {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.06em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-left > * {
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero-left > *:nth-child(5) { animation-delay: 0.5s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 6vw; padding-top: 80px; }
+    .hero-left::after { display: none; }
+    .hero-right { min-height: 50vh; padding: 5vw; }
+    .about-grid { grid-template-columns: 1fr; }
+    .who-grid { grid-template-columns: 1fr; }
+    .formats-grid { grid-template-columns: 1fr; }
+    .approach-inner { grid-template-columns: 1fr; }
+    .case-card { grid-template-columns: 1fr; gap: 2rem; }
+    .case-quote { grid-column: 1; }
+    .process-steps { flex-direction: column; gap: 2rem; }
+    .process-steps::before { display: none; }
+    nav { padding: 0 4vw; }
+    .nav-links { display: none; }
+    section { padding: 4rem 5vw; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Елена Трофимова</a>
+  <div class="nav-links">
+    <a href="#about">О себе</a>
+    <a href="#who">Для кого</a>
+    <a href="#formats">Форматы</a>
+    <a href="#case">Кейс</a>
+    <a href="#contact">Контакт</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="eyebrow">Executive &amp; Business Coach · ICF</div>
+    <h1>Елена<br><em>Трофимова</em></h1>
+    <p class="hero-sub">Коуч для лидеров и управленческих команд в условиях трансформаций и высокой нагрузки</p>
+    <div class="hero-tags">
+      <span class="tag">Индивидуальный коучинг</span>
+      <span class="tag">Командный коучинг</span>
+      <span class="tag">Бизнес-контекст</span>
+      <span class="tag">ICF стандарт</span>
+    </div>
+    <a href="#contact" class="btn-primary">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg>
+      Диагностическая встреча
+    </a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stats">
+      <div>
+        <span class="stat-num">15</span>
+        <span class="stat-label">лет в корпорациях</span>
+      </div>
+      <div>
+        <span class="stat-num">350+</span>
+        <span class="stat-label">часов практики</span>
+      </div>
+      <div>
+        <span class="stat-num">ICF</span>
+        <span class="stat-label">стандарт</span>
+      </div>
+    </div>
+    <div class="hero-quote">
+      <blockquote>Лидерство сегодня — это способность удерживать людей и результат в сложном мире</blockquote>
+      <span class="quote-author">Принцип работы</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-header">
+    <div class="section-eyebrow">О себе</div>
+    <h2>Я знаю корпоративные<br>системы <em>изнутри</em></h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Мой фокус — работа с лидерами и управленческими командами, которые несут высокий уровень ответственности, принимают решения в условиях неопределённости и хотят сохранять результат <strong>без потери людей и себя</strong>.</p>
+      <p>До перехода в коучинг я 15 лет работала внутри крупных международных фармацевтических корпораций — <strong>GSK и AbbVie</strong>. Матричные структуры, давление KPI, управление проектами и командами в условиях жёстких дедлайнов — я знаю, как это работает на практике, а не в теории.</p>
+      <p>Это принципиально меняет качество работы: мои клиенты не объясняют мне «как устроен бизнес» — мы сразу работаем с реальными задачами.</p>
+    </div>
+    <div class="credentials">
+      <div class="cred-item">
+        <div class="cred-icon">ICF</div>
+        <div class="cred-text">
+          <strong>Executive Coaching CCE ICF</strong>
+          <span>Международный центр коучинга SLAcademy, 2025–2026</span>
+        </div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon">БК</div>
+        <div class="cred-text">
+          <strong>Государственная квалификация «Бизнес-коуч»</strong>
+          <span>Государственная аттестация, 2026</span>
+        </div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon">L2</div>
+        <div class="cred-text">
+          <strong>ICF Level 2 "Coaching 2.0"</strong>
+          <span>From fundamental to unlimited, 2024</span>
+        </div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon">GSK</div>
+        <div class="cred-text">
+          <strong>15 лет в топ-10 фармкомпаний мира</strong>
+          <span>GSK (2021–н.в.), AbbVie (2016–2021), Ниармедик Плюс (2012–2016)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section class="who" id="who">
+  <div class="section-header">
+    <div class="section-eyebrow">Для кого</div>
+    <h2>Работаю с теми, кто несёт<br><em>реальную</em> ответственность</h2>
+  </div>
+  <div class="who-grid">
+    <div class="who-card">
+      <span class="who-card-num">01</span>
+      <h3>Топ- и старшие руководители</h3>
+      <p>Лидеры, принимающие стратегические решения в условиях неопределённости и высокой нагрузки</p>
+    </div>
+    <div class="who-card">
+      <span class="who-card-num">02</span>
+      <h3>Руководители функций и команд</h3>
+      <p>Менеджеры среднего и высшего звена, развивающие команды без потери собственного ресурса</p>
+    </div>
+    <div class="who-card">
+      <span class="who-card-num">03</span>
+      <h3>HiPo-лидеры</h3>
+      <p>Перспективные сотрудники на этапе расширения роли и принятия большей ответственности</p>
+    </div>
+    <div class="who-card">
+      <span class="who-card-num">04</span>
+      <h3>Компании в трансформации</h3>
+      <p>Организации, проходящие через структурные изменения, рост или смену бизнес-модели</p>
+    </div>
+    <div class="who-card">
+      <span class="who-card-num">05</span>
+      <h3>HR и L&amp;D партнёры</h3>
+      <p>Специалисты по развитию, строящие системную лидерскую среду в компании</p>
+    </div>
+    <div class="who-card">
+      <span class="who-card-num">06</span>
+      <h3>Управленческие команды</h3>
+      <p>Кросс-функциональные и проектные команды, где важна согласованность и скорость решений</p>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATS -->
+<section class="formats" id="formats">
+  <div class="section-header">
+    <div class="section-eyebrow">Решения для компаний</div>
+    <h2>Три направления<br><em>работы</em></h2>
+  </div>
+  <div class="formats-grid">
+    <div class="format-card">
+      <div class="format-num">1</div>
+      <h3>Эмоциональная устойчивость лидера</h3>
+      <p>Для компаний, где выгорание руководителей становится операционным риском. Давление скорости и ИИ на качество решений требует новых управленческих навыков.</p>
+      <div class="format-results">
+        <div class="format-result-item">Снижение риска выгорания</div>
+        <div class="format-result-item">Устойчивое управленческое поведение</div>
+        <div class="format-result-item">Повышение ясности и качества решений</div>
+        <div class="format-result-item">Управление собственной энергией</div>
+      </div>
+      <div class="format-meta">Индивидуальный коучинг · 6–8 сессий · 3–4 мес.</div>
+    </div>
+    <div class="format-card">
+      <div class="format-num">2</div>
+      <h3>Коучинговый стиль управления и культура обратной связи</h3>
+      <p>Когда руководители избегают сложных разговоров, обратная связь формальна, а ответственность и вовлечённость команд остаются низкими.</p>
+      <div class="format-results">
+        <div class="format-result-item">Регулярные качественные встречи с командами</div>
+        <div class="format-result-item">Рост ответственности сотрудников</div>
+        <div class="format-result-item">Культура доверия и конструктивной обратной связи</div>
+      </div>
+      <div class="format-meta">Модуль + коучинг · от 4 сессий · 2–3 мес.</div>
+    </div>
+    <div class="format-card">
+      <div class="format-num">3</div>
+      <h3>Командное лидерство и эффективность управленческих команд</h3>
+      <p>Для команд со скрытыми конфликтами, замедленным принятием решений и разрозненностью между подразделениями.</p>
+      <div class="format-results">
+        <div class="format-result-item">Повышение психологической устойчивости</div>
+        <div class="format-result-item">Снижение напряжения в команде</div>
+        <div class="format-result-item">Более согласованные и быстрые решения</div>
+      </div>
+      <div class="format-meta">Инд. + командный коучинг · 4–6 сессий · 3–4 мес.</div>
+    </div>
+  </div>
+  <p style="margin-top:2rem; font-size:0.82rem; color:var(--mid); text-align:center;">
+    Также доступны: воркшопы, программы для HiPo, фасилитация стратегических сессий, комбинированные форматы
+  </p>
+</section>
+
+<!-- APPROACH -->
+<section class="approach" id="approach">
+  <div class="section-header">
+    <div class="section-eyebrow">Мой подход</div>
+    <h2>Работаю с человеком,<br>его ролью и <em>системой</em> вокруг него</h2>
+  </div>
+  <div class="approach-inner">
+    <div class="approach-col">
+      <h3>Что я делаю</h3>
+      <ul class="approach-list">
+        <li>Связываю развитие с задачами бизнеса и конкретным контекстом</li>
+        <li>Сопровождаю внедрение новых управленческих практик</li>
+        <li>Делаю фокус на изменении поведения, а не только на осознании</li>
+        <li>Работаю с человеком, его ролью и системой вокруг него</li>
+        <li>Помогаю выстраивать устойчивое поведение, а не временный эффект</li>
+      </ul>
+    </div>
+    <div class="approach-col">
+      <h3>Чего я не делаю</h3>
+      <ul class="approach-list no">
+        <li>Не даю универсальных советов и «быстрых решений»</li>
+        <li>Не снимаю ответственность с руководителя</li>
+        <li>Не работаю как консультант, дающий готовые ответы</li>
+        <li>Не создаю зависимость — строю автономность</li>
+        <li>Не работаю «один на один» без учёта команды и окружения</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="section-header">
+    <div class="section-eyebrow">Процесс</div>
+    <h2 style="color:white;">Как устроена<br><em style="color:var(--orange);">совместная работа</em></h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-dot">1</div>
+      <div class="step-title">Встреча с HR / Спонсором</div>
+      <div class="step-sub">Обсуждение задач компании, контекста и формата</div>
+    </div>
+    <div class="process-step">
+      <div class="step-dot">2</div>
+      <div class="step-title">Chemistry-встреча</div>
+      <div class="step-sub">Знакомство с кандидатом, проверка совместимости</div>
+    </div>
+    <div class="process-step">
+      <div class="step-dot">3</div>
+      <div class="step-title">Трёхсторонняя встреча</div>
+      <div class="step-sub">Согласование целей между спонсором и коуч-лидером</div>
+    </div>
+    <div class="process-step">
+      <div class="step-dot">4</div>
+      <div class="step-title">Контракт и работа</div>
+      <div class="step-sub">Коучинговая программа с регулярной синхронизацией</div>
+    </div>
+    <div class="process-step">
+      <div class="step-dot">5</div>
+      <div class="step-title">Завершение и итоги</div>
+      <div class="step-sub">Оценка результатов, фиксация изменений, рекомендации</div>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top:3rem; font-size:0.8rem; color:rgba(255,255,255,0.35); letter-spacing:0.08em; text-transform:uppercase;">Рекомендуемая продолжительность — от 3 месяцев · Строгое соблюдение этического кодекса ICF · Конфиденциальность</p>
+</section>
+
+<!-- CASE -->
+<section class="case-section" id="case">
+  <div class="section-header">
+    <div class="section-eyebrow">Из практики</div>
+    <h2>Реальный<br><em>кейс</em></h2>
+  </div>
+  <div class="case-card">
+    <div>
+      <div class="case-label">Лидер некоммерческого фонда · 6 сессий</div>
+      <h3>Executive Coaching в условиях высокой неопределённости</h3>
+      <p>Руководитель работает в условиях интенсивного потока задач и значительной ответственности. Запрос: стратегический фокус, управление нагрузкой без выгорания, устойчивость в принятии решений, психологическая и эмоциональная гибкость.</p>
+    </div>
+    <div class="case-results">
+      <h4>Результаты</h4>
+      <div class="case-result"><div class="case-result-dot"></div><span>Снижение импульсивного реагирования на срочные задачи</span></div>
+      <div class="case-result"><div class="case-result-dot"></div><span>Осознанная расстановка приоритетов</span></div>
+      <div class="case-result"><div class="case-result-dot"></div><span>Рост уверенности в коммуникации с партнёрами и стейкхолдерами</span></div>
+      <div class="case-result"><div class="case-result-dot"></div><span>Расширение стратегического взгляда на профессиональный путь</span></div>
+      <div class="case-result"><div class="case-result-dot"></div><span>Продление контракта по запросу клиента</span></div>
+    </div>
+    <div class="case-quote">
+      <blockquote>Всё, что мы обсуждали, открывали и к чему пришли — легло в очень плодородную почву и откликнулось внутри. Чувствую важный фокус на собственном ресурсе, как основном двигателе изменений.</blockquote>
+      <cite>— Лидер некоммерческого фонда</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="eyebrow">Следующий шаг</div>
+  <h2>Начнём с<br><em>диагностической встречи</em></h2>
+  <p class="contact-sub">30–40 минут, бесплатно. Разберём задачи вашей компании и определим, какой формат работы даст нужный результат.</p>
+  <a href="mailto:elena.v.trofimova@mail.ru" class="btn-white">
+    Написать Елене
+  </a>
+  <a href="mailto:elena.v.trofimova@mail.ru" class="contact-email">elena.v.trofimova@mail.ru</a>
+</section>
+
+<footer>
+  <span class="footer-logo">Елена Трофимова · Executive &amp; Business Coach</span>
+  <span class="footer-note">ICF Standard · Confidentiality · 2026</span>
+</footer>
+
+</body>
+</html>
